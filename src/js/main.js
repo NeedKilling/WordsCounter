@@ -14,9 +14,8 @@ textarea.addEventListener('input',() => {
     symbol.textContent = subString.split(/\s/).join('').length
     words.textContent = subString.split(/\s/).filter(item => (item !== '' && /[a-zA-Zа-яА-Я]/.test(item))).length
 
-    if(symbol.textContent && words.textContent){
-        resetBtn.classList.add('active')
-    }
+    subString ? resetBtn.classList.add('active') : resetBtn.classList.remove('active')
+
 });
 
 resetBtn.addEventListener('click',(e)=>{
@@ -26,9 +25,6 @@ resetBtn.addEventListener('click',(e)=>{
     words.textContent = 0;
     resetBtn.classList.remove('active')
 });
-
-
-
 
 
 const random = () => {
